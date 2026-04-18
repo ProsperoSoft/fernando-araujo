@@ -122,12 +122,48 @@
             text-decoration: underline;
         }
 
+        /* Estilos para las instrucciones del vCard */
+        .instruccion-vcard {
+            background: #f0fdf4;
+            border-left: 4px solid #2d6a4f;
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 1rem;
+            text-align: left;
+            font-size: 0.8rem;
+            color: #166534;
+        }
+
+        .instruccion-vcard p {
+            margin: 0.25rem 0;
+        }
+
+        .instruccion-titulo {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .pasos {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .pasos li {
+            margin: 0.25rem 0;
+        }
+
         @media (max-width: 480px) {
             .card {
                 padding: 1.8rem;
             }
             h1 {
                 font-size: 1.8rem;
+            }
+            .instruccion-vcard {
+                font-size: 0.7rem;
             }
         }
     </style>
@@ -151,17 +187,35 @@
             ✉️ elprospero@gmail.com
         </a>
         
-        <!-- Botón Portafolio - ENLACE CORREGIDO -->
+        <!-- Botón Portafolio -->
         <a href="https://prosperosoft.github.io/portafolio/" class="btn" target="_blank" rel="noopener noreferrer">
             🌐 Ver portafolio
         </a>
 
         <hr>
 
-        <!-- Botón Guardar contacto vCard -->
-        <a href="#" id="downloadVCard" class="vcard-link">
-            📇 Guardar contacto (vCard)
-        </a>
+        <!-- Botón Guardar contacto vCard CON INSTRUCCIONES -->
+        <div style="text-align: center;">
+            <a href="#" id="downloadVCard" class="vcard-link">
+                📇 Guardar contacto (vCard)
+            </a>
+            
+            <!-- INSTRUCCIONES CLARAS PARA EL USUARIO -->
+            <div class="instruccion-vcard">
+                <div class="instruccion-titulo">
+                    ℹ️ ¿Cómo guardar el contacto?
+                </div>
+                <p>Al tocar el botón se descargará un archivo. Luego:</p>
+                <ul class="pasos">
+                    <li>📱 <strong>iPhone:</strong> Toca el archivo descargado → "Crear nuevo contacto"</li>
+                    <li>🤖 <strong>Android:</strong> Toca la notificación → "Importar" o "Guardar"</li>
+                    <li>💻 <strong>Computadora:</strong> Haz doble clic en el archivo → Se guarda automáticamente</li>
+                </ul>
+                <p style="margin-top: 0.5rem; font-size: 0.7rem; color: #2d6a4f;">
+                    ✅ Es seguro. Solo contiene mi información de contacto.
+                </p>
+            </div>
+        </div>
 
         <!-- Redes Sociales -->
         <div class="social">
