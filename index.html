@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Fernando Araujo | Desarrollador Web</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f5f3ef;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1.5rem;
+        }
+
+        .card {
+            max-width: 550px;
+            width: 100%;
+            background: white;
+            border-radius: 2rem;
+            padding: 2.5rem;
+            box-shadow: 0 25px 45px -12px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+            letter-spacing: -0.02em;
+        }
+
+        .prof {
+            color: #2d6a4f;
+            font-weight: 500;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.3px;
+        }
+
+        .bio {
+            color: #4a5568;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            background: #f7fafc;
+            padding: 1rem;
+            border-radius: 3rem;
+            text-decoration: none;
+            color: #1a202c;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            transition: all 0.25s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .btn:hover {
+            background: #edf2f7;
+            transform: translateY(-2px);
+            border-color: #cbd5e0;
+        }
+
+        .btn-primary {
+            background: #1a1a1a;
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: #2d3748;
+        }
+
+        .social {
+            display: flex;
+            justify-content: center;
+            gap: 1.8rem;
+            margin-top: 2rem;
+        }
+
+        .social a {
+            color: #718096;
+            text-decoration: none;
+            font-size: 1.4rem;
+            transition: color 0.2s;
+        }
+
+        .social a:hover {
+            color: #2d6a4f;
+        }
+
+        hr {
+            margin: 1.8rem 0;
+            border: none;
+            height: 1px;
+            background: #e2e8f0;
+        }
+
+        .vcard-link {
+            font-size: 0.9rem;
+            color: #2d6a4f;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .vcard-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 1.8rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Fernando Araujo</h1>
+        <div class="prof">Desarrollador Web</div>
+        <div class="bio">
+            Soluciones web limpias, rápidas y efectivas.<br>
+            Especialista en frontend y experiencias minimalistas.
+        </div>
+
+        <a href="https://wa.me/584169798397" class="btn btn-primary">
+            📲 WhatsApp
+        </a>
+        <a href="mailto:elprospero@gmail.com" class="btn">
+            ✉️ elprospero@gmail.com
+        </a>
+        <a href="#" class="btn">
+            🌐 Ver portafolio
+        </a>
+
+        <hr>
+
+        <a href="#" id="downloadVCard" class="vcard-link">
+            📇 Guardar contacto (vCard)
+        </a>
+
+        <div class="social">
+            <a href="#" aria-label="LinkedIn">🔗</a>
+            <a href="#" aria-label="GitHub">🐙</a>
+            <a href="#" aria-label="Twitter">🐦</a>
+        </div>
+    </div>
+
+    <script>
+        function downloadVCard() {
+            const vcardData = `BEGIN:VCARD
+VERSION:3.0
+FN:Fernando Araujo
+N:Araujo;Fernando;;;
+TITLE:Desarrollador Web
+ROLE:Desarrollador Web
+TEL;TYPE=WORK,CELL:0416 9798397
+EMAIL;TYPE=WORK:elprospero@gmail.com
+URL;TYPE=WORK:https://tuportafolio.com/fernando
+NOTE:Soluciones web limpias, rápidas y efectivas. Especialista en frontend y rendimiento web.
+ORG:ProsperoSoft
+REV:20260418T120000Z
+END:VCARD`;
+
+            const blob = new Blob([vcardData], { type: "text/vcard" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "Fernando_Araujo_Contacto.vcf";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        document.getElementById('downloadVCard').addEventListener('click', function(e) {
+            e.preventDefault();
+            downloadVCard();
+        });
+    </script>
+</body>
+</html>
