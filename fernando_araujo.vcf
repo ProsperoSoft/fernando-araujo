@@ -1,0 +1,13 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Fernando Araujo
+N:Araujo;Fernando;;;
+TITLE:Desarrollador Web
+ROLE:Desarrollador Web
+TEL;TYPE=WORK,CELL:0416 9798397
+EMAIL;TYPE=WORK:elprospero@gmail.com
+URL;TYPE=WORK:https://prosperosoft.github.io/fernando-araujo
+NOTE:Soluciones web limpias, rápidas y efectivas. Especialista en frontend y rendimiento web.
+ORG:ProsperoSoft
+REV:20260418T120000Z
+END:VCARD
